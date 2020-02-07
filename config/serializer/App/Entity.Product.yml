@@ -1,0 +1,24 @@
+App\Entity\Product:
+  exclusion_policy: all
+  properties:
+    id:
+      expose: true
+      groups: [product:collection, product:item, product:create, product:update]
+    name:
+      expose: true
+      groups: [product:collection, product:item, product:create, product:update]
+    currency:
+      expose: true
+      groups: [product:collection, product:item, product:create, product:update]
+    price:
+      expose: true
+      groups: [product:collection, product:item, product:create, product:update]
+    featured:
+      expose: true
+      groups: [product:create, product:update, product:item]
+    category:
+      groups: [product:create, product:update, product:item]
+  virtual_properties:
+    getCategoryName:
+      serialized_name: categoryName
+      groups: [product:collection]
