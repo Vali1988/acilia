@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use App\Enum\CurrencyProductEnum;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
@@ -23,11 +25,12 @@ class Product
 
     /**
      * @ORM\Column(type="float")
+	 * @Assert\NotBlank(message="Field not empty")
      */
     private $price;
 
     /**
-     * @ORM\Column(type="string", length=3, columnDefinition="ENUM('USD', 'EUR'")
+     * @ORM\Column(type="string", length=3)
      */
     private $currency;
 
@@ -77,7 +80,11 @@ class Product
 
     public function setCurrency(string $currency): self
     {
-        $this->currency = $currency;
+		if (!in_array($currency, array_values(CurrencyProductEnum::$types))) {
+			throw new \InvalidArgumentException("Invalid status");
+		}
+
+		$this->currency = $currency;
 
         return $this;
     }

@@ -9,4 +9,4 @@ App\Entity\Category:
         groups: [category:collection, category:item, category:create, category:update, product:item, product:create, product:update]
       description:
         expose: true
-        groups: [category:collection, category:item, category:create, category:update, product:item,product:create, product:update]
+        groups: [category:collection, category:item, category:create, category:update, product:item, product:create, product:update]

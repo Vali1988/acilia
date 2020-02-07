@@ -7,7 +7,7 @@ namespace App\DataFixtures;
 use App\Entity\Category;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class CategoryFixtures extends BaseFixture
+class CategoryFixtures extends BaseFixtures
 {
 
 	protected function loadData(ObjectManager $objectManager)

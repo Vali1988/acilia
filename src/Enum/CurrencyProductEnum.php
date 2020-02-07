@@ -6,7 +6,7 @@ namespace App\Enum;
 
 class CurrencyProductEnum
 {
-	private static $types = [
+	public static $types = [
 		'Euro' => 'EUR',
 		'Dolar' => 'USD',
 	];

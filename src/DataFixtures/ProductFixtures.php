@@ -9,7 +9,7 @@ use App\Entity\Product;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class ProductFixtures extends BaseFixture implements DependentFixtureInterface
+class ProductFixtures extends BaseFixtures implements DependentFixtureInterface
 {
 	private $currency = [
 		'USD',

@@ -14,6 +14,7 @@ fos_rest:
     validate: true
 
   view:
+    serialize_null: true
     empty_content: 200
     view_response_listener: 'force'
     failed_validation: HTTP_BAD_REQUEST
